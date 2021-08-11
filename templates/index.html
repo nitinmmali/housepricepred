@@ -5,98 +5,203 @@
     <title>House Price Pridiction</title>
     <link rel="stylesheet" type="text/css" href="./static/mycss.css", media="screen,projection"/>
     <link rel="stylesheet" type="text/css" href="./static/mycss2.css", media="screen,projection"/>
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Black&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
-<body>
+
+
+
+
+
+<body style="background-color:blue;text-align:center">
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+
+.neon {
+    position: relative;
+    overflow: hidden;
+    filter: brightness(120%);
+}
+
+.text {
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    position: relative;
+    user-select: none;
+}
+
+.text::before {
+    content: attr(data-text);
+    position: absolute;
+    color: white;
+    filter: blur(0.02em);
+    mix-blend-mode: difference;
+}
+
+.gradient {
+    position: absolute;
+    background: linear-gradient(45deg, red, gold, lightgreen, gold, red);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    mix-blend-mode: multiply;
+}
+
+.spotlight {
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(
+            circle,
+            white,
+            transparent 25%
+        ) center / 25% 25%,
+        radial-gradient(
+            circle,
+            white,
+            black 25%
+        ) center / 12.5% 12.5%;
+    animation: light 5s linear infinite;
+    mix-blend-mode: color-dodge;
+}
+
+.neon {
+  color: #fff;
+  text-shadow:
+    0 0 5px #fff,
+    0 0 10px #fff,
+    0 0 20px #fff,
+    0 0 40px #0ff,
+    0 0 80px #0ff,
+    0 0 90px #0ff,
+    0 0 100px #0ff,
+    0 0 150px #0ff;
+}
+
+.box {
+        width: 120px;
+        height: 30px;
+        border: 1px solid #999;
+        font-size: 18px;
+        color: #1c87c9;
+        background-color: #eee;
+        border-radius: 5px;
+        box-shadow: 4px 4px #ccc;
+      }
+
+@keyframes light {
+    to {
+        transform: translate(50%, 50%);
+    }
+}
+
+
+</style>  
 <div id="body">
-            <div class='background'>
-                <div class="text1">
-                    <h1> HOUSE PRICE PREDICTION using Regression </h1>
-                </div>
-            </div>
-    <div class=paragraph1>
-        <p>
-             This project demonstrates using multiple linear regression for a house price prediction problem.The data used in this problem is Boston housing price dataset.
-        </p>
-        
-    </div>
+<div class="neon">
+
+  <h1 class="text" >HOUSE PRICE PREDICTION (Regression)</h1>
+                    
+  <span class="gradient"></span>
+  <span class="spotlight"></span>
+</div>
+ 
 
                
 
-    <div class=paragraph2>
+    <div class="neon">
         <p>
+        This project demonstrates using multiple linear regression for a house price prediction problem. The data used in this problem is Boston housing price dataset</a>
         </p>
     </div>
       <div class=form>
         
-        <form action="/predict" method="post">
-        </Select><br>
+        <form action="/predict" method="post" class="w3-container">
+        </Select>
             
-            <label>Lotsize (in square feet):</label><br>
-            <input type="number" placeholder="Enter Lotsize here" id='lotsize' name='lotsize'><br>
+            <label>Lotsize (in square feet):</label>
+            <input class="w3-input" type="number" placeholder="Enter Lotsize here" id='lotsize' name='lotsize'>
             
             
             
-            <label>Number of Bedrooms :</label><br>
-            <input type="number" placeholder="No. of Bedrooms" id='bedrooms' name='bedrooms'><br>
+            <label>Number of Bedrooms :</label>
+            <input class="w3-input" type="number" placeholder="No. of Bedrooms" id='bedrooms' name='bedrooms'>
             
-            <label>Number of Bathrooms :</label><br>
-            <input type="number" placeholder="No. of Bathrooms" id='bathrms' name='bathrms'><br>
+            <label>Number of Bathrooms :</label>
+            <input class="w3-input" type="number" placeholder="No. of Bathrooms" id='bathrms' name='bathrms'>
            
-            <label>stories:</label><br>
-            <input type="number" placeholder="Enter stories(1,2,3,4)" id='stories' name='stories'><br>
+            <label>stories:</label>
+            <input class="w3-input" type="number" placeholder="Enter stories(1,2,3,4)" id='stories' name='stories'>
             
-            </Select><br>
-            <label class='select_label'>What about driveway ,want one? </label>
-             <Select id='driveway' name='driveway'>
+            <label>Number of Garage Places :</label>
+            <input class="w3-input" type="number"  placeholder="No. of Garage places (0,1,2,3,4)" id='garagepl' name='garagepl'><br>
+            <label class='select_label'>What about driveway ,want one?     </label>
+             <Select style="margin-left:215px" id='driveway' name='driveway'>
             <option value='1'>Yes</option>
              <option selected value="0" >No</option>
-            </Select><br>
+            </Select>
         
-            </Select><br>
-            <label class='select_label'>Do you want recreational room? </label>
-                <Select id='recroom' name='recroom'>
+            <br>
+            <label class='select_label'>Do you want recreational room?      </label>
+                <Select style="margin-left:220px" id='recroom' name='recroom'>
             <option value='1'>Yes</option>
              <option selected value="0" >No</option>
-                </Select><br>
+                </Select>
             
-            
+            <br>
             <label class='select_label'>Want a full basement?</label>
-             <Select id='fullbase' name='fullbase'>
+             <Select style="margin-left:295px" id='fullbase' name='fullbase'>
             <option value='1'>Yes</option>
              <option selected value="0" >No</option>
-            </Select><br> 
+            </Select>
             
-            
+            <br>
             <label class='select_label'>Looking for gas hot water in the house?</label>
-            <Select id='gashw' name='gashw'>
+            <Select style="margin-left:163px" id='gashw' name='gashw'>
             <option value='1'>Yes</option>
              <option selected value="0" >No</option>
-                </Select><br>
+                </Select>
             
-            
+            <br>
             <label class='select_label'>Do you want air conditioning?</label>
-          <Select id='airco' name='airco'>
+          <Select style="margin-left:240px" id='airco' name='airco'>
             <option value='1'>Yes</option>
              <option selected value="0" >No</option>
-                </Select><br>
+                </Select>
             
             
-                <label>Number of Garage Places :</label>
-            <input type="number" placeholder="No. of Garage places (0,1,2,3,4)" id='garagepl' name='garagepl'><br>
+        
             
-            
+            <br>
               <label class='select_label'>Do you have a prefered area?</label>
-             <Select id='prefarea' name='prefarea'>
+             <Select style="margin-left:240px" id='prefarea' name='prefarea'>
              <option value='1'>Yes</option>
                 <option selected value="0" >No</option>
-                </Select><br>
+                </Select>
+                <br>
                 <button id=submitbtn type="submit" value="Submit">Submit</button><br>
            </form>
 
-      </div>
-                    <div id=result1>
-                </div>
 
+      </div>
+                    
 </div>
 </body>
             <div id=result>
