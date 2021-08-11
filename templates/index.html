@@ -14,7 +14,7 @@
 
 
 
-<body style="background-color:blue;text-align:center">
+<body style="background-color:rgba(0, 174, 255, 0.165);text-align:center">
 
 <style>
 body {
@@ -33,11 +33,11 @@ body {
 }
 
 .text {
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
     font-size: 20px;
     font-weight: bold;
-    font-family: sans-serif;
+    /* font-family: sans-serif; */
     text-transform: uppercase;
     position: relative;
     user-select: none;
@@ -46,8 +46,8 @@ body {
 .text::before {
     content: attr(data-text);
     position: absolute;
-    color: white;
-    filter: blur(0.02em);
+    color: rgba(255, 255, 255, 0.008);
+    /* filter: blur(0.02em); */
     mix-blend-mode: difference;
 }
 
@@ -70,7 +70,7 @@ body {
     background: 
         radial-gradient(
             circle,
-            white,
+            black,
             transparent 25%
         ) center / 25% 25%,
         radial-gradient(
@@ -83,10 +83,10 @@ body {
 }
 
 .neon {
-  color: #fff;
+  color: black;
   text-shadow:
-    0 0 5px #fff,
-    0 0 10px #fff,
+    0 0 5px rgb(255, 255, 255),
+    0 0 10px rgb(255, 255, 255),
     0 0 20px #fff,
     0 0 40px #0ff,
     0 0 80px #0ff,
@@ -119,8 +119,6 @@ body {
 
   <h1 class="text" >HOUSE PRICE PREDICTION (Regression)</h1>
                     
-  <span class="gradient"></span>
-  <span class="spotlight"></span>
 </div>
  
 
