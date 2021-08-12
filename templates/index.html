@@ -5,201 +5,183 @@
     <title>House Price Pridiction</title>
     <link rel="stylesheet" type="text/css" href="./static/mycss.css", media="screen,projection"/>
     <link rel="stylesheet" type="text/css" href="./static/mycss2.css", media="screen,projection"/>
-    <link href="https://fonts.googleapis.com/css?family=Archivo+Black&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
+<body style="background-color:#1cb8c960;">
 
 
 
 
 
-<body style="background-color:rgba(0, 174, 255, 0.165);text-align:center">
 
-<style>
-body {
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: black;
-}
-
-.neon {
-    position: relative;
-    overflow: hidden;
-    filter: brightness(120%);
-}
-
-.text {
-    background-color: white;
-    color: black;
-    font-size: 20px;
-    font-weight: bold;
-    /* font-family: sans-serif; */
-    text-transform: uppercase;
-    position: relative;
-    user-select: none;
-}
-
-.text::before {
-    content: attr(data-text);
-    position: absolute;
-    color: rgba(255, 255, 255, 0.008);
-    /* filter: blur(0.02em); */
-    mix-blend-mode: difference;
-}
-
-.gradient {
-    position: absolute;
-    background: linear-gradient(45deg, red, gold, lightgreen, gold, red);
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    mix-blend-mode: multiply;
-}
-
-.spotlight {
-    position: absolute;
-    top: -100%;
-    left: -100%;
-    right: 0;
-    bottom: 0;
-    background: 
-        radial-gradient(
-            circle,
-            black,
-            transparent 25%
-        ) center / 25% 25%,
-        radial-gradient(
-            circle,
-            white,
-            black 25%
-        ) center / 12.5% 12.5%;
-    animation: light 5s linear infinite;
-    mix-blend-mode: color-dodge;
-}
-
-.neon {
-  color: black;
-  text-shadow:
-    0 0 5px rgb(255, 255, 255),
-    0 0 10px rgb(255, 255, 255),
-    0 0 20px #fff,
-    0 0 40px #0ff,
-    0 0 80px #0ff,
-    0 0 90px #0ff,
-    0 0 100px #0ff,
-    0 0 150px #0ff;
-}
-
-.box {
-        width: 120px;
-        height: 30px;
-        border: 1px solid #999;
-        font-size: 18px;
-        color: #1c87c9;
-        background-color: #eee;
-        border-radius: 5px;
-        box-shadow: 4px 4px #ccc;
-      }
-
-@keyframes light {
-    to {
-        transform: translate(50%, 50%);
-    }
-}
-
-
-</style>  
 <div id="body">
-<div class="neon">
+<style type='text/css'>
+  body {
+    background-color: black
+  }
+  
+  h1 {
+    color: brown;
+  }
+  
+  p {
+    color: green;
+  }
 
-  <h1 class="text" >HOUSE PRICE PREDICTION (Regression)</h1>
-                    
-</div>
- 
+  label {
+    color: brown;
+  }
+</style>
 
-               
-
-    <div class="neon">
-        <p>
-        This project demonstrates using multiple linear regression for a house price prediction problem. The data used in this problem is Boston housing price dataset</a>
+            <div class='background'>
+                <div class="text1">
+                    <h1 style="text-align:center ">HOUSE PRICE PRIDICTION</h1>
+                   
+                </div>
+            </div>
+    <div class=paragraph1>
+        <p  style="text-align:center"  >
+             This project demonstrates using multiple linear regression for a house price prediction problem. 
+         </p>    
+        <p  style="text-align:center"  >     The data used in this problem is Boston housing price dataset
         </p>
+        
     </div>
+
+
+    <style>
+      .button {
+  background-color: Blue; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+.button1 {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.button2:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+
+
+
+</style>         
+<style>
+.textbox {
+  border: 3px outset #FFA5A5;
+  outline:0;
+  height:25px;
+  width: 275px;
+}
+</style>
+   
+
+
+
+
+
+
+
+
       <div class=form>
         
-        <form action="/predict" method="post" class="w3-container">
-        </Select>
+        <form action="/predict" method="post">
+       
             
             <label>Lotsize (in square feet):</label>
-            <input class="w3-input" type="number" placeholder="Enter Lotsize here" id='lotsize' name='lotsize'>
-            
-            
+           
+            <input  class="textbox" style="margin-left:295px" type="number" placeholder="Enter Lotsize here" id='lotsize' name='lotsize'><br>
+            <br>
             
             <label>Number of Bedrooms :</label>
-            <input class="w3-input" type="number" placeholder="No. of Bedrooms" id='bedrooms' name='bedrooms'>
-            
+          
+            <input class="textbox"  style="margin-left:295px" type="number" placeholder="No. of Bedrooms" id='bedrooms' name='bedrooms'><br>
+           <br>
+
+
             <label>Number of Bathrooms :</label>
-            <input class="w3-input" type="number" placeholder="No. of Bathrooms" id='bathrms' name='bathrms'>
-           
-            <label>Number of Floors:</label>
-            <input class="w3-input" type="number" placeholder="Enter Number of Floors(1,2,3,4)" id='stories' name='stories'>
-            
+          
+            <input  class="textbox"    style="margin-left:295px"   type="number" placeholder="No. of Bathrooms" id='bathrms' name='bathrms'><br>
+            <br> 
+
             <label>Number of Garage Places :</label>
-            <input class="w3-input" type="number"  placeholder="No. of Garage places (0,1,2,3,4)" id='garagepl' name='garagepl'><br>
-            <label class='select_label'>What about driveway ,want one?     </label>
-             <Select style="margin-left:215px" id='driveway' name='driveway'>
-            <option value='1'>Yes</option>
-             <option selected value="0" >No</option>
-            </Select>
-        
+          
+            <input class="textbox"  style="margin-left:275px" type="number" placeholder="No. of Garage places (0,1,2,3,4)" id='garagepl' name='garagepl'>
+            <br> 
             <br>
-            <label class='select_label'>Do you want recreational room?      </label>
-                <Select style="margin-left:220px" id='recroom' name='recroom'>
+            <label>Number of Floors:</label>
+           
+            <input class="textbox"   style="margin-left:325px" type="number" placeholder="Enter Number of floors" id='stories' name='stories'>
+           <br>
+            <br>
+            <label class='select_label'>What about driveway ,want one? </label>
+            <Select  style="margin-left:305px" id='driveway' name='driveway'>
             <option value='1'>Yes</option>
              <option selected value="0" >No</option>
-                </Select>
+            </select><br>
+            <br>
+           
+            <label class='select_label'>Do you want recreational room? </label>
+            <Select style="margin-left:310px" id='recroom' name='recroom'>
+            <option value='1'>Yes</option>
+             <option selected value="0" >No</option>
+             </select><br>
+             <br>
+              
             
-            <br>
+            
             <label class='select_label'>Want a full basement?</label>
-             <Select style="margin-left:295px" id='fullbase' name='fullbase'>
+             <Select style="margin-left:371px" id='fullbase' name='fullbase'>
             <option value='1'>Yes</option>
              <option selected value="0" >No</option>
-            </Select>
+             </select><br>
+             <br>
+          
             
-            <br>
+            
             <label class='select_label'>Looking for gas hot water in the house?</label>
-            <Select style="margin-left:163px" id='gashw' name='gashw'>
+            <Select style="margin-left:260px" id='gashw' name='gashw'>
             <option value='1'>Yes</option>
              <option selected value="0" >No</option>
-                </Select>
+             </select><br>
+             <br>
             
-            <br>
+            
             <label class='select_label'>Do you want air conditioning?</label>
-          <Select style="margin-left:240px" id='airco' name='airco'>
+          <Select style="margin-left:315px" id='airco' name='airco'>
             <option value='1'>Yes</option>
              <option selected value="0" >No</option>
-                </Select>
+             </select><br>
+             <br>
             
             
-        
-            
-            <br>
+      
               <label class='select_label'>Do you have a prefered area?</label>
-             <Select style="margin-left:240px" id='prefarea' name='prefarea'>
+             <Select style="margin-left:325px"  id='prefarea' name='prefarea'>
              <option value='1'>Yes</option>
-                <option selected value="0" >No</option>
-                </Select>
-                <br>
-                <button id=submitbtn type="submit" value="Submit">Submit</button><br>
+              <option selected value="0" >No</option>
+              </select><br>
+              <br>
+              <br>
+             
+                <button class="button button2"   id=submitbtn type="submit" value="Submit" style="margin-left: 50%">Submit</button><br>
            </form>
 
-
       </div>
-                    
+                    <div id=result1>
+                       
+                </div>
+
 </div>
 </body>
             <div id=result>
