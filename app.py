@@ -17,7 +17,7 @@ col=['lotsize', 'bedrooms', 'bathrms', 'stories', 'driveway', 'recroom','fullbas
 def homePage():
     return render_template("index.html")
 
-@app.route('/predict', methods=['POST','GET'])
+@app.route('/predict', methods=['GET','POST'])
 def predict():
     int_features=[int(x) for x in request.form.values()]
     final= [np.array(int_features, dtype=float)]
